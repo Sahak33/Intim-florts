@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+}
+
+#error {
+  color: var(--cta-primary);
+  text-align: center;
+}
+
+
+@media screen and (max-width: 767px) {
+
+}

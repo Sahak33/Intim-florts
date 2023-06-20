@@ -1,0 +1,14 @@
+.stepper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--text-gray);
+  .yellow {
+    color: var(--accent-yellow);
+  }
+  .red {
+    color: var(--cta-primary);
+  }
+}

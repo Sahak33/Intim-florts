@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  height: calc(112px + 28px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  &-links {
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    &__item {
+      display: inline-block;
+      text-decoration: none;
+      margin-right: 8px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--text-black);
+      &:not(:last-child):after  {
+        content: ' | ';
+      }
+    }
+  }
+  &-line {
+    width: calc(100% - 4px);
+    border: 2px solid var(--bg-gray);
+    margin-bottom: 16px;
+  }
+  &-copyright {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--text-gray);
+  }
+}

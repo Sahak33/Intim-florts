@@ -1,0 +1,9 @@
+.home {
+  width: 100%;
+  height: 767px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('assets/images/bg_part_one.jpg')left top no-repeat, url('assets/images/bg_part_two.jpg') right 325px no-repeat;
+  background-size: contain;
+}

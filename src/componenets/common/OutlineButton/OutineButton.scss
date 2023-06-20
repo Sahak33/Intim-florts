@@ -1,0 +1,17 @@
+.btn-outline {
+  width: 514px;
+  height: 48px;
+  border: 1px solid var(--text-gray);
+  border-radius: 16px;
+  outline: none;
+  background: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--text-gray);
+  cursor: pointer;
+  &:hover, &.btn-active {
+    border: 1px solid var(--cta-primary);
+    color: var(--cta-primary);
+  }
+}

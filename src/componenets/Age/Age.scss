@@ -1,0 +1,61 @@
+.age {
+  margin: 40px auto;
+  max-width: 560px;
+
+  &-inner {
+    &__form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+
+      .arrow-down {
+        margin-right: 24px;
+      }
+
+      .label {
+        line-height: unset;
+        color: #212B36;
+      }
+
+      fieldset {
+        border: 1px solid var(--cta-primary);
+      }
+
+      .day, .month, .year {
+        background: #FFFFFF;
+        height: 48px;
+        border-radius: 16px;
+        font-weight: 400;
+        font-size: 18px;
+        color: var(--text-black);
+      }
+
+      .day, .year {
+        width: 148px;
+      }
+
+      .day {
+      }
+
+      .month {
+        width: 186px;
+      }
+
+      .year {
+      }
+    }
+    &__back {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--text-gray);
+    margin-bottom: 16px;
+  }
+}
