@@ -1,18 +1,17 @@
 import { useSelector } from 'react-redux';
 import { Box } from '@mui/material';
+import Age from 'componenets/Age';
 import CardForm from 'componenets/Card';
 import Footer from 'componenets/Footer';
 import Gender from 'componenets/Gender';
 import DatingReasons from 'componenets/Interest';
+import Location from 'componenets/Location';
 import ProgressBar from 'componenets/ProgressBar';
 import Question from 'componenets/Question';
 import Stepper from 'componenets/Stepper';
 import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import './App.scss';
-
-import Age from 'componenets/Age';
-import Location from "componenets/Location";
 
 //TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS
