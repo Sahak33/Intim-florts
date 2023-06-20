@@ -5,6 +5,7 @@ const initialState = {
 	seeking: null,
 	birthday: null,
 	location: null,
+	username: '',
 };
 
 export default initialState;

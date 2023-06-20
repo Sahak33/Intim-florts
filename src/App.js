@@ -13,6 +13,8 @@ import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import './App.scss';
 
+import Username from './componenets/Username';
+
 //TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS
 //TODO: CHANGE GIT CONFIG USER NAME EMAIL
@@ -30,6 +32,7 @@ const App = () => {
 					{step === 2 && <Gender data={SEEKING} title='Seeking a' />}
 					{step === 3 && <Age />}
 					{step === 4 && <Location />}
+					{step === 5 && <Username />}
 				</CardForm>
 			</Box>
 			<Footer />

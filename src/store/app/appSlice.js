@@ -23,6 +23,9 @@ const appSlice = createSlice({
 			if (state.step === 4) {
 				state.birthday = null;
 			}
+			if (state.step === 5) {
+				state.location = null;
+			}
 
 			state.step -= 1;
 		},
@@ -43,8 +46,13 @@ const appSlice = createSlice({
 			state.location = payload;
 			state.step += 1;
 		},
+		setUsername: (state, { payload }) => {
+			state.username = payload;
+			state.step += 1;
+		},
 	},
 });
 
-export const { chooseInteresting, back, setGender, setBirthday, chooseLocation } = appSlice.actions;
+export const { chooseInteresting, back, setGender, setBirthday, chooseLocation, setUsername } =
+	appSlice.actions;
 export default appSlice.reducer;

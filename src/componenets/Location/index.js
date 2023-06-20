@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import Back from 'componenets/Back';
+import Button from 'componenets/common/Button';
 import { chooseLocation } from 'store/app/appSlice';
 import { VALIDATION_MESSAGES } from 'helpers/constants';
 import { ReactComponent as Search } from 'assets/images/icons/search.svg';
 import './Location.scss';
-
-import Back from '../Back';
-import Button from '../common/Button';
 
 const { FIELD_IS_REQUIRED } = VALIDATION_MESSAGES;
 
