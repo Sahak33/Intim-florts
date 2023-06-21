@@ -18,7 +18,15 @@ export const STEP_QUESTION = [
 	'Add your email address',
 ];
 
-export const MESSAGE_DIRECTION = ['center', 'start', 'start', 'center', 'center', 'center'];
+export const MESSAGE_DIRECTION = [
+	'center',
+	'start',
+	'start',
+	'center',
+	'center',
+	'center',
+	'center',
+];
 
 export const GENDER = [
 	{ pole: 'man', img: man },

@@ -13,12 +13,13 @@ import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import './App.scss';
 
+import Password from './componenets/Password';
 import Username from './componenets/Username';
 
 //TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS
 //TODO: CHANGE GIT CONFIG USER NAME EMAIL
-//TODO: SCSS MIXINS
+//TODO: SCSS MIXINS - flex, back center, input, text, font size
 
 const App = () => {
 	const { step } = useSelector(appSelector);
@@ -33,6 +34,7 @@ const App = () => {
 					{step === 3 && <Age />}
 					{step === 4 && <Location />}
 					{step === 5 && <Username />}
+					{step === 6 && <Password />}
 				</CardForm>
 			</Box>
 			<Footer />
