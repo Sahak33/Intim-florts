@@ -9,8 +9,8 @@
   box-sizing: inherit;
 }
 
-a {
-  text-decoration: none;
+body {
+  overflow: hidden;
 }
 
 body, html, #root {
@@ -18,12 +18,11 @@ body, html, #root {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 #error {
   color: var(--cta-primary);
   text-align: center;
-}
-
-
-@media screen and (max-width: 767px) {
-
 }

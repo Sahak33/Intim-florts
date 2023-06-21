@@ -6,15 +6,14 @@ import Footer from 'componenets/Footer';
 import Gender from 'componenets/Gender';
 import DatingReasons from 'componenets/Interest';
 import Location from 'componenets/Location';
+import Password from 'componenets/Password';
 import ProgressBar from 'componenets/ProgressBar';
 import Question from 'componenets/Question';
 import Stepper from 'componenets/Stepper';
+import Username from 'componenets/Username';
 import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import './App.scss';
-
-import Password from './componenets/Password';
-import Username from './componenets/Username';
 
 //TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS

@@ -15,3 +15,9 @@
     color: var(--cta-primary);
   }
 }
+
+@media (min-width: 375px) and (max-width: 563px) {
+  .btn-outline {
+    width: 300px;
+  }
+}

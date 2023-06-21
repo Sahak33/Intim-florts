@@ -1,6 +1,6 @@
 .gender {
   width: 100%;
-  height: 315px;
+  min-height: 315px;
   display: flex;
   flex-direction: column;
   margin-top: 32px;
@@ -14,6 +14,7 @@
       height: 228px;
       display: flex;
       justify-content: center;
+      position: relative;
       p {
         color: var(--cta-primary);
         font-weight: 600;
@@ -40,6 +41,43 @@
       position: absolute;
       bottom: 24px;
       cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 840px) {
+  .gender {
+    &-inner {
+      .man, .woman {
+        width: 335px;
+      }
+    }
+  }
+}
+
+@media (min-width: 564px) and (max-width: 768px) {
+  .gender {
+    &-inner {
+      flex-direction: column;
+      .man, .woman {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) and (max-width: 563px) {
+  .gender {
+    &-inner {
+      flex-direction: column;
+      .man, .woman {
+        margin-bottom: 16px;
+        width: 305px;
+        height: unset;
+      }
+      &__box {
+        width: 260px;
+      }
     }
   }
 }
