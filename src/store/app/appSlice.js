@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import initialState from './initialState';
+import { createUsername, fetchLocations, signUp } from './thunks';
 
 const appSlice = createSlice({
 	name: 'app',
 	initialState,
 	reducers: {
 		chooseInteresting: (state, { payload }) => {
-			state.interest = payload;
+			if (state.interest !== payload) {
+				state.interest = payload;
+			}
 			state.step += 1;
 		},
 		back: state => {
@@ -15,10 +18,16 @@ const appSlice = createSlice({
 				state.gender = null;
 			}
 			if (state.step === 3) {
-				state.seeking = null;
+				state.looking_for = null;
 			}
 			if (state.step === 4) {
 				state.DOB = null;
+				state.locations = [];
+				state.location = '';
+			}
+			if (state.step === 5) {
+				state.locations = [];
+				state.location = '';
 			}
 
 			state.step -= 1;
@@ -38,15 +47,71 @@ const appSlice = createSlice({
 		},
 		chooseLocation: (state, { payload }) => {
 			state.location = payload;
-			state.step += 1;
 		},
 		setUsername: (state, { payload }) => {
 			state.username = payload;
 			state.step += 1;
 		},
+		setPassword: (state, { payload }) => {
+			state.password = payload;
+			state.step += 1;
+		},
+		cleanLocations: state => {
+			state.locations = [];
+		},
+		next: state => {
+			state.step += 1;
+		},
+	},
+	extraReducers: {
+		[createUsername.pending]: state => {
+			state.loading = true;
+		},
+		[createUsername.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.userId = payload;
+			state.step += 1;
+			state.error = '';
+		},
+		[createUsername.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
+		[fetchLocations.pending]: state => {
+			state.loading = true;
+		},
+		[fetchLocations.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.locations = payload;
+			state.error = '';
+		},
+		[fetchLocations.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
+		[signUp.pending]: state => {
+			state.loading = true;
+		},
+		[signUp.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.error = '';
+		},
+		[signUp.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
 	},
 });
 
-export const { chooseInteresting, back, setGender, setBirthday, chooseLocation, setUsername } =
-	appSlice.actions;
+export const {
+	chooseInteresting,
+	next,
+	back,
+	setGender,
+	setBirthday,
+	chooseLocation,
+	setUsername,
+	setPassword,
+	cleanLocations,
+} = appSlice.actions;
 export default appSlice.reducer;

@@ -35,4 +35,21 @@
     display: flex;
     justify-content: center;
   }
+  &-result {
+    height: 300px;
+    overflow: auto;
+    border-radius: 16px;
+    border: 1px solid var(--cta-primary);
+    padding: 12px;
+    margin-bottom: 12px;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    p {
+      cursor: pointer;
+      &:hover {
+        color: var(--cta-primary);
+      }
+    }
+  }
 }

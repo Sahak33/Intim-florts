@@ -15,10 +15,13 @@ import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import './App.scss';
 
+import Complete from './componenets/Complete';
+
 //TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS
 //TODO: CHANGE GIT CONFIG USER NAME EMAIL
 //TODO: SCSS MIXINS - flex, back center, input, text, font size
+//TODO: REMOVE USER ID FROM LOCAL STORAGE
 
 const App = () => {
 	const { step } = useSelector(appSelector);
@@ -34,6 +37,7 @@ const App = () => {
 					{step === 4 && <Location />}
 					{step === 5 && <Username />}
 					{step === 6 && <Password />}
+					{step === 7 && <Complete />}
 				</CardForm>
 			</Box>
 			<Footer />

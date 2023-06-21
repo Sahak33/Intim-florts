@@ -1,48 +1,82 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
-import { chooseLocation } from 'store/app/appSlice';
-import { VALIDATION_MESSAGES } from 'helpers/constants';
+import { chooseLocation, cleanLocations, next } from 'store/app/appSlice';
+import { fetchLocations } from 'store/app/thunks';
+import { appSelector } from 'helpers/reduxSelectors';
+import useDebounce from 'hooks/useDebounce';
 import { ReactComponent as Search } from 'assets/images/icons/search.svg';
 import './Location.scss';
 
-const { FIELD_IS_REQUIRED } = VALIDATION_MESSAGES;
-
 const Location = () => {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm({ mode: 'onChange' });
+	const [filterInputValue, setFilterInputValue] = useState('');
+	const [error, setError] = useState(null);
+
+	const { locations, location } = useSelector(appSelector);
+	const debouncedSearch = useDebounce(filterInputValue, 500);
 
 	const dispatch = useDispatch();
 
-	const onSubmit = data => {
-		dispatch(chooseLocation(data.location));
+	useEffect(() => {
+		if (debouncedSearch) {
+			setError(null);
+			filterMessages();
+		}
+	}, [debouncedSearch]);
+
+	const filterMessages = () => {
+		dispatch(fetchLocations(filterInputValue.toUpperCase()));
+	};
+
+	const handleInputValue = e => {
+		setFilterInputValue(e.target.value);
+		if (!Boolean(e.target.value)) {
+			dispatch(cleanLocations());
+		}
+	};
+
+	const handleChooseLocation = location => () => {
+		dispatch(chooseLocation(location));
+	};
+
+	const handleNext = () => {
+		if (!location) {
+			setError('Please choose location');
+		} else {
+			dispatch(next());
+		}
 	};
 
 	return (
-		<form className='location' onSubmit={handleSubmit(onSubmit)}>
+		<div className='location'>
 			<p>Your location will never be shared with third parties, you data is secure</p>
 			<div className='location-box'>
 				<input
 					className='location-field'
 					type='text'
 					placeholder='Location'
-					{...register('location', {
-						required: FIELD_IS_REQUIRED,
-					})}
+					value={filterInputValue}
+					onChange={handleInputValue}
 				/>
 				<Search className='search' />
 			</div>
-			{errors.location && <p id='error'>{errors.location?.message}</p>}
-			<Button title='Next' />
+			{error && !location && <p id='error'>{error}</p>}
+			{!!locations.length && !location && (
+				<div className='location-result'>
+					{locations.map(item => (
+						<p key={item} onClick={handleChooseLocation(item)}>
+							{item}
+						</p>
+					))}
+				</div>
+			)}
+			{location && <p>Chosen location: {location}</p>}
+			<Button title='Next' onPress={handleNext} />
 			<div className='location-back'>
 				<Back />
 			</div>
-		</form>
+		</div>
 	);
 };
 
