@@ -14,3 +14,24 @@ export const generateYears = () => {
 	}
 	return years;
 };
+
+export const progressBarCalc = step => {
+	switch (step) {
+		case 0:
+			return 2;
+		case 1:
+			return 16;
+		case 2:
+			return 30;
+		case 3:
+			return 45;
+		case 4:
+			return 58;
+		case 5:
+			return 72;
+		case 6:
+			return 85;
+		case 7:
+			return 100;
+	}
+};
