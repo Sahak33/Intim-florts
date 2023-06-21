@@ -29,13 +29,13 @@ export const MESSAGE_DIRECTION = [
 ];
 
 export const GENDER = [
-	{ pole: 'man', img: man },
-	{ pole: 'woman', img: woman },
+	{ pole: 'man', img: man, val: 'Male' },
+	{ pole: 'woman', img: woman, val: 'Female' },
 ];
 
 export const SEEKING = [
-	{ pole: 'man', img: sekking_man },
-	{ pole: 'woman', img: seeking_woman },
+	{ pole: 'man', img: sekking_man, val: 'Male' },
+	{ pole: 'woman', img: seeking_woman, val: 'Female' },
 ];
 
 export const MONTHS = [

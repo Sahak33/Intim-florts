@@ -36,8 +36,18 @@ const Age = () => {
 			if (error) {
 				setError('');
 			}
-			let birthday = `${day}-${month}-${year}`;
-			dispatch(setBirthday(birthday));
+			let mm = '';
+			MONTHS.forEach((item, idx) => {
+				if (item === month) {
+					if (idx + 1 < 10) {
+						mm = `0${idx + 1}`
+					} else {
+						mm = idx + 1;
+					}
+				}
+			})
+			let DOB = `${year}-${mm}-${day}`;
+			dispatch(setBirthday(DOB));
 		}
 	};
 

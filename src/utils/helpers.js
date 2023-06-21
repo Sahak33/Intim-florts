@@ -1,7 +1,11 @@
 export const generateDays = () => {
 	const days = [];
 	for (let i = 1; i <= 31; i++) {
-		days.push(i);
+		if (i < 10) {
+			days.push(`0${i}`);
+		} else {
+			days.push(i);
+		}
 	}
 	return days;
 };

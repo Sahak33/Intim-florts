@@ -2,8 +2,8 @@ const initialState = {
 	interest: '',
 	step: 0,
 	gender: null,
-	seeking: null,
-	birthday: null,
+	looking_for: null,
+	DOB: null,
 	location: null,
 	username: '',
 };

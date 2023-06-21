@@ -15,8 +15,8 @@ const Gender = ({ data, title }) => {
 	return (
 		<Box className='gender'>
 			<div className='gender-inner'>
-				{data.map(({ pole, img }) => (
-					<Box className={pole} key={pole} onClick={handleChooseGender(pole)}>
+				{data.map(({ pole, img, val }) => (
+					<Box className={pole} key={pole} onClick={handleChooseGender(val)}>
 						<img src={img} alt={pole} />
 						<Box className='gender-inner__box'>
 							<p>

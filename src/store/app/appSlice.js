@@ -11,9 +11,6 @@ const appSlice = createSlice({
 			state.step += 1;
 		},
 		back: state => {
-			if (state.step === 1) {
-				state.interest = '';
-			}
 			if (state.step === 2) {
 				state.gender = null;
 			}
@@ -21,10 +18,7 @@ const appSlice = createSlice({
 				state.seeking = null;
 			}
 			if (state.step === 4) {
-				state.birthday = null;
-			}
-			if (state.step === 5) {
-				state.location = null;
+				state.DOB = null;
 			}
 
 			state.step -= 1;
@@ -34,12 +28,12 @@ const appSlice = createSlice({
 				state.gender = payload;
 			}
 			if (state.step === 2) {
-				state.seeking = payload;
+				state.looking_for = payload;
 			}
 			state.step += 1;
 		},
 		setBirthday: (state, { payload }) => {
-			state.birthday = payload;
+			state.DOB = payload;
 			state.step += 1;
 		},
 		chooseLocation: (state, { payload }) => {
