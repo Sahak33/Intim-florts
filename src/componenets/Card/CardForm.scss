@@ -1,9 +1,10 @@
+@import "src/styles/mixins";
+
 .card-form {
   width: 760px;
   min-height: 425px;
   padding: 48px 20px 32px;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   background: var(--bg-white);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
@@ -18,9 +19,7 @@
   &__footer {
     text-align: center;
     margin-top: 24px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
+    @include text-400-18-26;
     color: var(--text-black);
     a {
       color: var(--cta-primary);

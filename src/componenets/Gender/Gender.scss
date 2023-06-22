@@ -1,19 +1,17 @@
+@import "src/styles/mixins";
+
 .gender {
   width: 100%;
   min-height: 315px;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   margin-top: 32px;
   &-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-justify-between-center;
     position: relative;
     .man, .woman {
       width: 344px;
       height: 228px;
-      display: flex;
-      justify-content: center;
+      @include flex-justify-center;
       position: relative;
       p {
         color: var(--cta-primary);
@@ -35,9 +33,7 @@
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
       backdrop-filter: blur(3px);
       border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       position: absolute;
       bottom: 24px;
       cursor: pointer;

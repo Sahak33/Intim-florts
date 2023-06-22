@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .btn-primary {
   width: calc(100% - 64px);
   height: 37px;
@@ -5,9 +7,7 @@
   border-radius: 16px;
   border: none;
   outline: none;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
+  @include text-500-18-26;
   color: var(--bg-white);
   padding: 11px 32px;
   cursor: pointer;

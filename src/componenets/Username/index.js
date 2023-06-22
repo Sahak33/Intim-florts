@@ -33,7 +33,7 @@ const Username = () => {
 	return (
 		<form className='username' onSubmit={handleSubmit(onSubmit)}>
 			<input
-				className='username-field'
+				className='text-field'
 				type='text'
 				placeholder='Username'
 				{...register('username', {
@@ -46,7 +46,7 @@ const Username = () => {
 			/>
 			{errors.username && <p id='error'>{errors.username?.message}</p>}
 			<Button title='Next' />
-			<div className='username-back'>
+			<div className='back'>
 				<Back />
 			</div>
 		</form>

@@ -7,9 +7,7 @@ import Register from 'componenets/Register';
 import Stepper from 'componenets/Stepper';
 import './App.scss';
 
-//TODO: REMOVE UNUSED FONTS
 //TODO: CHANGE ALL MUI COMPONENTS
-//TODO: SCSS MIXINS - flex, back center, input, text, font size
 //TODO: REMOVE USER ID FROM LOCAL STORAGE
 
 const App = () => (

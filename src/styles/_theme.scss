@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +22,28 @@ body, html, #root {
 
 a {
   text-decoration: none;
+}
+
+.description {
+  @include text-400-14-24;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.text-field {
+  width: calc(100% - 50px);
+  height: 24px;
+  padding: 12px 24px;
+  border: 1px solid var(--cta-primary);
+  border-radius: 16px;
+  background: var(--bg-white);
+  @include text-400-14-24;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+.back {
+  @include flex-justify-center;
 }
 
 #error {

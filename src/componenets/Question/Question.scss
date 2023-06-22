@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .question {
   width: 70%;
   height: 48px;
@@ -14,13 +16,9 @@
     height: 48px;
     background: var(--bg-gray);
     border-radius: 0 12px 12px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     &__text {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
+      @include text-400-18-26;
       color: var(--text-black);
     }
   }

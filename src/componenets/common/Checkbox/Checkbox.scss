@@ -1,7 +1,8 @@
+@import "src/styles/mixins";
+
 .checkbox {
   color: var(--text-black);
-  font-size: 14px;
-  line-height: 24px;
+  @include text-400-14-24;
   position: relative;
   padding-left: 32px;
   cursor: pointer;
@@ -30,8 +31,7 @@
     padding: 3px 1px;
     border: 1px solid var(--text-grey, var(--text-gray));
     border-radius: 2px;
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
   }
 
   & .checkbox__field:checked ~ .checkbox__checkmark {

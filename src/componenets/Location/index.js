@@ -50,10 +50,12 @@ const Location = () => {
 
 	return (
 		<div className='location'>
-			<p>Your location will never be shared with third parties, you data is secure</p>
+			<p className='description'>
+				Your location will never be shared with third parties, you data is secure
+			</p>
 			<div className='location-box'>
 				<input
-					className='location-field'
+					className='text-field'
 					type='text'
 					placeholder='Location'
 					value={filterInputValue}
@@ -65,15 +67,15 @@ const Location = () => {
 			{!!locations.length && !location && (
 				<div className='location-result'>
 					{locations.map(item => (
-						<p key={item} onClick={handleChooseLocation(item)}>
+						<p className='description' key={item} onClick={handleChooseLocation(item)}>
 							{item}
 						</p>
 					))}
 				</div>
 			)}
-			{location && <p>Chosen location: {location}</p>}
+			{location && <p className='description'>Chosen location: {location}</p>}
 			<Button title='Next' onPress={handleNext} />
-			<div className='location-back'>
+			<div className='back'>
 				<Back />
 			</div>
 		</div>

@@ -35,9 +35,9 @@ const Password = () => {
 
 	return (
 		<form className='password' onSubmit={handleSubmit(onSubmit)}>
-			<p>More than 6 characters. Includes at least 1 number</p>
+			<p className='description'>More than 6 characters. Includes at least 1 number</p>
 			<input
-				className='password-field'
+				className='text-field'
 				type='password'
 				placeholder='Password'
 				{...register('password', {
@@ -50,7 +50,7 @@ const Password = () => {
 			/>
 			{errors.password && <p id='error'>{errors.password?.message}</p>}
 			<Button title='Next' />
-			<div className='password-back'>
+			<div className='back'>
 				<Back />
 			</div>
 		</form>

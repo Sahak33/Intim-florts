@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .btn-outline {
   width: 514px;
   height: 48px;
@@ -5,9 +7,7 @@
   border-radius: 16px;
   outline: none;
   background: transparent;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
+  @include text-500-18-26;
   color: var(--text-gray);
   cursor: pointer;
   &:hover, &.btn-active {

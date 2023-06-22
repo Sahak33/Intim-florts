@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .age {
   margin: 40px auto;
   max-width: 560px;
@@ -15,7 +17,7 @@
 
       .label {
         line-height: unset;
-        color: #212B36;
+        color: var(--text-black);
       }
 
       fieldset {
@@ -23,7 +25,7 @@
       }
 
       .day, .month, .year {
-        background: #FFFFFF;
+        background: var(--bg-white);
         height: 48px;
         border-radius: 16px;
         font-weight: 400;
@@ -38,18 +40,6 @@
         width: 186px;
       }
     }
-    &__back {
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: var(--text-gray);
-    margin-bottom: 16px;
   }
 }
 

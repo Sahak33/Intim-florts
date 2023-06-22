@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .footer {
   width: 100%;
   height: calc(112px + 28px);
@@ -16,9 +18,7 @@
       display: inline-block;
       text-decoration: none;
       margin-right: 8px;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
+      @include text-400-18-26;
       color: var(--text-black);
       &:not(:last-child):after  {
         content: ' | ';
@@ -31,9 +31,7 @@
     margin-bottom: 16px;
   }
   &-copyright {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+    @include text-400-14-24;
     color: var(--text-gray);
   }
 }

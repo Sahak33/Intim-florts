@@ -46,7 +46,7 @@ const Age = () => {
 			MONTHS.forEach((item, idx) => {
 				if (item === month) {
 					if (idx + 1 < 10) {
-						mm = `0${idx + 1}`;
+						mm = Number(`0${idx + 1}`);
 					} else {
 						mm = idx + 1;
 					}
@@ -60,7 +60,7 @@ const Age = () => {
 	return (
 		<Box className='age'>
 			<Box className='age-inner'>
-				<p>You must be at least 18 years old to use Intim Flort</p>
+				<p className='description'>You must be at least 18 years old to use Intim Flort</p>
 				<div className='age-inner__form'>
 					<FormControl>
 						<InputLabel className='label'>Day</InputLabel>
@@ -125,7 +125,7 @@ const Age = () => {
 				</div>
 				{error && <p id='error'>{error}</p>}
 				<Button title='Next' onPress={handleNext} />
-				<div className='age-inner__back'>
+				<div className='back'>
 					<Back />
 				</div>
 			</Box>

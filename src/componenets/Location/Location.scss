@@ -1,29 +1,12 @@
+@import "src/styles/mixins";
+
 .location {
   max-width: 550px;
   margin: 40px auto 0 auto;
   &-box {
     position: relative;
-    margin-bottom: 24px;
   }
-  p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: var(--text-gray);
-    margin-bottom: 16px;
-  }
-  &-field {
-    width: calc(100% - 50px);
-    height: 24px;
-    padding: 12px 24px;
-    border: 1px solid var(--cta-primary);
-    border-radius: 16px;
-    background: var(--bg-white);
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: var(--text-gray);
-  }
+
   .search {
     position: absolute;
     right: 16px;
@@ -31,10 +14,6 @@
     color: var(--text-gray);
   }
 
-  &-back {
-    display: flex;
-    justify-content: center;
-  }
   &-result {
     height: 300px;
     overflow: auto;

@@ -46,7 +46,7 @@ const Complete = () => {
 	return (
 		<form className='complete' onSubmit={handleSubmit(onSubmit)}>
 			<input
-				className='email-field'
+				className='text-field'
 				type='text'
 				placeholder='Email'
 				{...register('email', {
@@ -70,7 +70,7 @@ const Complete = () => {
 
 			{errors.agree && <p id='error'>{errors.agree?.message}</p>}
 			<Button title='Complete' />
-			<div className='complete-back'>
+			<div className='back'>
 				<Back />
 			</div>
 		</form>

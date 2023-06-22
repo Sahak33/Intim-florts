@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { Box, LinearProgress } from '@mui/material';
 import { progressBarCalc } from 'utils/helpers';
 import { appSelector } from 'helpers/reduxSelectors';
-import './ProgressBar.scss';
 
 const ProgressBar = () => {
 	const [progress, setProgress] = useState(0);
