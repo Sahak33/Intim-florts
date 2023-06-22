@@ -7,13 +7,12 @@ import Register from 'componenets/Register';
 import Stepper from 'componenets/Stepper';
 import './App.scss';
 
-//TODO: CHANGE ALL MUI COMPONENTS
 //TODO: REMOVE USER ID FROM LOCAL STORAGE
 
 const App = () => (
 	<>
 		<Box className='home'>
-			<CardForm renderStepper={() => <Stepper />} renderProggressBar={() => <ProgressBar />}>
+			<CardForm renderStepper={() => <Stepper />} renderProgressBar={() => <ProgressBar />}>
 				<Question />
 				<Register />
 			</CardForm>

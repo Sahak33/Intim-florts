@@ -61,7 +61,7 @@ const Age = () => {
 		<Box className='age'>
 			<Box className='age-inner'>
 				<p className='description'>You must be at least 18 years old to use Intim Flort</p>
-				<div className='age-inner__form'>
+				<Box className='age-inner__form'>
 					<FormControl>
 						<InputLabel className='label'>Day</InputLabel>
 						<Select
@@ -70,9 +70,9 @@ const Age = () => {
 							label='Day'
 							onChange={handleChangeDay}
 							IconComponent={() => (
-								<div className='arrow-down'>
+								<Box className='arrow-down'>
 									<ArrowDown />
-								</div>
+								</Box>
 							)}
 						>
 							{generateDays().map(day => (
@@ -90,9 +90,9 @@ const Age = () => {
 							label='Month'
 							onChange={handleChangeMonth}
 							IconComponent={() => (
-								<div className='arrow-down'>
+								<Box className='arrow-down'>
 									<ArrowDown />
-								</div>
+								</Box>
 							)}
 						>
 							{MONTHS.map(month => (
@@ -110,9 +110,9 @@ const Age = () => {
 							label='Year'
 							onChange={handleChangeYear}
 							IconComponent={() => (
-								<div className='arrow-down'>
+								<Box className='arrow-down'>
 									<ArrowDown />
-								</div>
+								</Box>
 							)}
 						>
 							{generateYears().map(year => (
@@ -122,12 +122,12 @@ const Age = () => {
 							))}
 						</Select>
 					</FormControl>
-				</div>
+				</Box>
 				{error && <p id='error'>{error}</p>}
 				<Button title='Next' onPress={handleNext} />
-				<div className='back'>
+				<Box className='back'>
 					<Back />
-				</div>
+				</Box>
 			</Box>
 		</Box>
 	);

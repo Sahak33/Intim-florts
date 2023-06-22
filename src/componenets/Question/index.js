@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { MESSAGE_DIRECTION, STEP_QUESTION } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 import botAvatar from 'assets/images/bot-avatar.jpg';
@@ -19,7 +19,7 @@ const Question = () => {
 				<img src={botAvatar} alt='bot avatar' />
 			</Box>
 			<Box className='question-message'>
-				<Typography className='question-message__text'>{STEP_QUESTION[step]}</Typography>
+				<p className='question-message__text'>{STEP_QUESTION[step]}</p>
 			</Box>
 		</Box>
 	);

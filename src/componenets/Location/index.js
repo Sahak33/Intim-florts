@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
 import { chooseLocation, cleanLocations, next } from 'store/app/appSlice';
@@ -49,11 +50,11 @@ const Location = () => {
 	};
 
 	return (
-		<div className='location'>
+		<Box className='location'>
 			<p className='description'>
 				Your location will never be shared with third parties, you data is secure
 			</p>
-			<div className='location-box'>
+			<Box className='location-box'>
 				<input
 					className='text-field'
 					type='text'
@@ -62,23 +63,23 @@ const Location = () => {
 					onChange={handleInputValue}
 				/>
 				<Search className='search' />
-			</div>
+			</Box>
 			{error && !location && <p id='error'>{error}</p>}
 			{!!locations.length && !location && (
-				<div className='location-result'>
+				<Box className='location-result'>
 					{locations.map(item => (
 						<p className='description' key={item} onClick={handleChooseLocation(item)}>
 							{item}
 						</p>
 					))}
-				</div>
+				</Box>
 			)}
 			{location && <p className='description'>Chosen location: {location}</p>}
 			<Button title='Next' onPress={handleNext} />
-			<div className='back'>
+			<Box className='back'>
 				<Back />
-			</div>
-		</div>
+			</Box>
+		</Box>
 	);
 };
 

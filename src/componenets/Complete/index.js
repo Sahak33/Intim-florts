@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
 import Checkbox from 'componenets/common/Checkbox';
@@ -70,9 +71,9 @@ const Complete = () => {
 
 			{errors.agree && <p id='error'>{errors.agree?.message}</p>}
 			<Button title='Complete' />
-			<div className='back'>
+			<Box className='back'>
 				<Back />
-			</div>
+			</Box>
 		</form>
 	);
 };

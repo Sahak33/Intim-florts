@@ -14,7 +14,7 @@ const Gender = ({ data, title }) => {
 
 	return (
 		<Box className='gender'>
-			<div className='gender-inner'>
+			<Box className='gender-inner'>
 				{data.map(({ pole, img, val }) => (
 					<Box className={pole} key={pole} onClick={handleChooseGender(val)}>
 						<img src={img} alt={pole} />
@@ -25,7 +25,7 @@ const Gender = ({ data, title }) => {
 						</Box>
 					</Box>
 				))}
-			</div>
+			</Box>
 			<Back />
 		</Box>
 	);

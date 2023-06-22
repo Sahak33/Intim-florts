@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
 import CryptoJS from 'crypto-js';
@@ -50,9 +51,9 @@ const Password = () => {
 			/>
 			{errors.password && <p id='error'>{errors.password?.message}</p>}
 			<Button title='Next' />
-			<div className='back'>
+			<Box className='back'>
 				<Back />
-			</div>
+			</Box>
 		</form>
 	);
 };
