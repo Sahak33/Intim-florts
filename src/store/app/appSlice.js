@@ -29,6 +29,12 @@ const appSlice = createSlice({
 				state.locations = [];
 				state.location = '';
 			}
+			if (state.step === 6) {
+				state.userId = null;
+			}
+			if (state.step === 7) {
+				state.password = null;
+			}
 
 			state.step -= 1;
 		},
@@ -47,10 +53,6 @@ const appSlice = createSlice({
 		},
 		chooseLocation: (state, { payload }) => {
 			state.location = payload;
-		},
-		setUsername: (state, { payload }) => {
-			state.username = payload;
-			state.step += 1;
 		},
 		setPassword: (state, { payload }) => {
 			state.password = payload;
@@ -94,6 +96,12 @@ const appSlice = createSlice({
 		},
 		[signUp.fulfilled]: (state, { payload }) => {
 			state.loading = false;
+			state.DOB = payload?.DOB;
+			state.email = payload?.email;
+			state.gender = payload?.gender;
+			state.looking_for = payload?.looking_for;
+			state.username = payload?.username;
+			state.userId = payload?._id;
 			state.error = '';
 		},
 		[signUp.rejected]: (state, { payload }) => {
@@ -110,7 +118,6 @@ export const {
 	setGender,
 	setBirthday,
 	chooseLocation,
-	setUsername,
 	setPassword,
 	cleanLocations,
 } = appSlice.actions;

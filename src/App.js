@@ -7,8 +7,6 @@ import Register from 'componenets/Register';
 import Stepper from 'componenets/Stepper';
 import './App.scss';
 
-//TODO: REMOVE USER ID FROM LOCAL STORAGE
-
 const App = () => (
 	<>
 		<Box className='home'>

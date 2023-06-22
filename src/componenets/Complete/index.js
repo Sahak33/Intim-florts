@@ -20,7 +20,7 @@ const Complete = () => {
 		watch,
 		formState: { errors },
 	} = useForm({ mode: 'onChange' });
-	const { password, DOB, location, gender, looking_for } = useSelector(appSelector);
+	const { password, DOB, location, gender, looking_for, userId, error } = useSelector(appSelector);
 
 	const dispatch = useDispatch();
 
@@ -31,14 +31,17 @@ const Complete = () => {
 
 	const onSubmit = data => {
 		const completedData = {
-			password: JSON.parse(
-				CryptoJS.AES.decrypt(password, process.env.REACT_APP_BASE_URL).toString(CryptoJS.enc.Utf8)
-			),
-			email: data.email,
-			DOB,
-			location,
-			gender,
-			looking_for,
+			id: userId,
+			body: {
+				password: JSON.parse(
+					CryptoJS.AES.decrypt(password, process.env.REACT_APP_BASE_URL).toString(CryptoJS.enc.Utf8)
+				),
+				email: data.email,
+				DOB,
+				location,
+				gender,
+				looking_for,
+			},
 		};
 
 		dispatch(signUp(completedData));
@@ -70,6 +73,7 @@ const Complete = () => {
 			/>
 
 			{errors.agree && <p id='error'>{errors.agree?.message}</p>}
+			{error && <p id='error'>{error}</p>}
 			<Button title='Complete' />
 			<Box className='back'>
 				<Back />

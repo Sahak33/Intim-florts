@@ -46,7 +46,7 @@ const Age = () => {
 			MONTHS.forEach((item, idx) => {
 				if (item === month) {
 					if (idx + 1 < 10) {
-						mm = Number(`0${idx + 1}`);
+						mm = `0${idx + 1}`;
 					} else {
 						mm = idx + 1;
 					}

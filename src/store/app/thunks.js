@@ -6,14 +6,8 @@ export const createUsername = createAsyncThunk(
 	'app/createUsername',
 	async (data, { rejectWithValue }) =>
 		username(data)
-			.then(({ data: { Data } }) => {
-				localStorage.setItem('user_id', Data);
-				return Data;
-			})
-			.catch(e => {
-				console.log(e, 'errorrrrr username');
-				return rejectWithValue(e.response.data.message);
-			})
+			.then(({ data: { Data } }) => Data)
+			.catch(e => rejectWithValue(e.response.data.Error.message))
 );
 
 export const fetchLocations = createAsyncThunk(
@@ -21,19 +15,12 @@ export const fetchLocations = createAsyncThunk(
 	async (search, { rejectWithValue }) =>
 		getLocations({ params: { search } })
 			.then(({ data: { Data } }) => Data)
-			.catch(e => {
-				console.log(e, 'error locations');
-				return rejectWithValue(e.message);
-			})
+			.catch(e => rejectWithValue(e.response?.data?.Error?.message))
 );
 
-export const signUp = createAsyncThunk('app/signUp', async (data, { rejectWithValue }) =>
-	register(data)
-		.then(({ data }) => {
-			console.log(data, 'data');
-		})
-		.catch(e => {
-			console.log(e, 'errorrrrr create user');
-			return rejectWithValue(e.response.data.message);
-		})
-);
+export const signUp = createAsyncThunk('app/signUp', async (data, { rejectWithValue }) => {
+	const { id, body } = data;
+	return register(id, body)
+		.then(({ data: { Data } }) => Data)
+		.catch(e => rejectWithValue(e.response?.data?.Error?.message));
+});

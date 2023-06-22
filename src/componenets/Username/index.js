@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
 import { createUsername } from 'store/app/thunks';
-//import { setUsername } from 'store/app/appSlice';
 import { VALIDATION_MESSAGES } from 'helpers/constants';
+import {appSelector} from "helpers/reduxSelectors";
 import './Username.scss';
 
 const { FIELD_IS_REQUIRED, USERNAME_REQUIREMENT } = VALIDATION_MESSAGES;
@@ -19,6 +19,8 @@ const Username = () => {
 		formState: { errors },
 	} = useForm({ mode: 'onChange' });
 
+	const { error } = useSelector(appSelector);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -28,7 +30,6 @@ const Username = () => {
 
 	const onSubmit = data => {
 		dispatch(createUsername({ username: data.username }));
-		//dispatch(setUsername(data.username));
 	};
 
 	return (
@@ -46,6 +47,7 @@ const Username = () => {
 				})}
 			/>
 			{errors.username && <p id='error'>{errors.username?.message}</p>}
+			{error && <p id='error'>{error}</p>}
 			<Button title='Next' />
 			<Box className='back'>
 				<Back />
