@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import Loader from 'componenets/Loader';
 
 export const Register = lazy(() => import('pages/SignUp'));
 export const Home = lazy(() => import('pages/Home'));
@@ -9,7 +10,7 @@ export const ROUTES = [
 		id: 'sign-up',
 		path: '',
 		element: (
-			<Suspense fallback={<div className='loader'></div>}>
+			<Suspense fallback={<Loader />}>
 				<Register />
 			</Suspense>
 		),
@@ -18,7 +19,7 @@ export const ROUTES = [
 		id: 'home',
 		path: 'home',
 		element: (
-			<Suspense fallback={<div className='loader'></div>}>
+			<Suspense fallback={<Loader />}>
 				<Home />
 			</Suspense>
 		),
@@ -27,7 +28,7 @@ export const ROUTES = [
 		id: 'not-found',
 		path: '*',
 		element: (
-			<Suspense fallback={<div className='loader'></div>}>
+			<Suspense fallback={<Loader />}>
 				<NotFound />
 			</Suspense>
 		),

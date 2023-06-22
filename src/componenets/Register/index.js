@@ -1,24 +1,74 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
-import Age from 'componenets/Age';
-import Complete from 'componenets/Complete';
-import Gender from 'componenets/Gender';
-import Interest from 'componenets/Interest';
-import Location from 'componenets/Location';
-import Password from 'componenets/Password';
-import Username from 'componenets/Username';
+import Loader from 'componenets/Loader';
 import { GENDER, SEEKING } from 'helpers/constants';
 import { appSelector } from 'helpers/reduxSelectors';
 
+export const Interest = lazy(() => import('componenets/Interest'));
+export const Gender = lazy(() => import('componenets/Gender'));
+export const Age = lazy(() => import('componenets/Age'));
+export const Location = lazy(() => import('componenets/Location'));
+export const Username = lazy(() => import('componenets/Username'));
+export const Password = lazy(() => import('componenets/Password'));
+export const Complete = lazy(() => import('componenets/Complete'));
+
 const steps = [
-	{ component: <Interest /> },
-	{ component: <Gender data={GENDER} title='I am a' /> },
-	{ component: <Gender data={SEEKING} title='Seeking a' /> },
-	{ component: <Age /> },
-	{ component: <Location /> },
-	{ component: <Username /> },
-	{ component: <Password /> },
-	{ component: <Complete /> },
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Interest />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Gender data={GENDER} title='I am a' />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Gender data={SEEKING} title='Seeking a' />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Age />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Location />{' '}
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Username />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Password />
+			</Suspense>
+		),
+	},
+	{
+		component: (
+			<Suspense fallback={<Loader />}>
+				<Complete />
+			</Suspense>
+		),
+	},
 ];
 
 const Register = () => {
