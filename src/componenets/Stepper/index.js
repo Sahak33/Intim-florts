@@ -18,9 +18,9 @@ export const STEPS = [
 	<Target />,
 	<Cake />,
 	<Location />,
-	<Message />,
 	<User />,
 	<Lock />,
+	<Message />,
 ];
 
 const Stepper = () => {
