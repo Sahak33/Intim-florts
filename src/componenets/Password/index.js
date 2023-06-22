@@ -30,10 +30,6 @@ const Password = () => {
 			JSON.stringify(data.password),
 			process.env.REACT_APP_BASE_URL
 		).toString();
-		// const decrypted = CryptoJS.AES.decrypt(
-		// 	ciphertext,
-		// 	process.env.REACT_APP_BASE_URL
-		// ).toString(CryptoJS.enc.Utf8);
 		dispatch(setPassword(ciphertext));
 	};
 

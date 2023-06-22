@@ -1,0 +1,94 @@
+.complete {
+  max-width: 550px;
+  margin: 40px auto 0 auto;
+
+  .email-field {
+    width: calc(100% - 50px);
+    height: 24px;
+    padding: 12px 24px;
+    border: 1px solid var(--cta-primary);
+    border-radius: 16px;
+    background: var(--bg-white);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--text-gray);
+    margin-bottom: 24px;
+  }
+
+  &-terms {
+    color: var(--text-black);
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+    &__checkbox {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: var(--content-gray-blue-50);
+      position: relative;
+      padding-left: 24px;
+      cursor: pointer;
+      user-select: none;
+
+      &__field {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      &__checkmark {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background: rgba(147, 165, 182, 0.15);
+        border: 1px solid rgba(147, 165, 182, 0.15);
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+      }
+
+      & .checkbox__field:checked ~ .checkbox__checkmark {
+        background:  var(--accent-turquoise);
+      }
+
+      .checkbox__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      & .checkbox__field:checked ~ .checkbox__checkmark:after {
+        display: flex;
+      }
+
+      & .checkbox__checkmark:after {
+        left: 4px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--bg-primary-blue-light);
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    a {
+      color: var(--accent-green);
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+  }
+
+  &-back {
+    display: flex;
+    justify-content: center;
+  }
+}

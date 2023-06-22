@@ -26,6 +26,7 @@ export const MESSAGE_DIRECTION = [
 	'center',
 	'center',
 	'center',
+	'center',
 ];
 
 export const GENDER = [
@@ -57,5 +58,6 @@ export const VALIDATION_MESSAGES = {
 	FIELD_IS_REQUIRED: 'This field is required',
 	USERNAME_REQUIREMENT:
 		'Username should be maximum 12 characters,should contain latin letters,can contain "_" and numbers.',
-	PASSWORD_REQUIREMENT: 'password should be 6-16 characters and contain at least one number',
+	PASSWORD_REQUIREMENT: 'Password should be 6-16 characters and contain at least one number',
+	EMAIL_REQUIREMENT: 'Please enter a valid email',
 };
