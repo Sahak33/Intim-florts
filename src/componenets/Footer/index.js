@@ -1,9 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
+import { FOOTER_LINKS } from 'helpers/constants';
 import { ReactComponent as Logo } from 'assets/images/logo/logo.svg';
 import './Footer.scss';
-
-import { FOOTER_LINKS } from '../../helpers/constants';
 
 const Footer = () => {
 	return (
@@ -11,9 +11,9 @@ const Footer = () => {
 			<Logo />
 			<div className='footer-links'>
 				{FOOTER_LINKS.map(item => (
-					<a className='footer-links__item' key={item} href='#'>
+					<NavLink className='footer-links__item' key={item} to=''>
 						{item}
-					</a>
+					</NavLink>
 				))}
 			</div>
 			<Box className='footer-line'></Box>

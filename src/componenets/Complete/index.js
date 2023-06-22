@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
@@ -72,8 +72,8 @@ const Complete = () => {
 			<Checkbox
 				label={
 					<p>
-						I have read and accept the <a href='#'>Terms of Service</a> and our
-						<a href='#'> Privacy Statement.</a>
+						I have read and accept the <NavLink to=''>Terms of Service</NavLink> and our
+						<NavLink to=''> Privacy Statement.</NavLink>
 					</p>
 				}
 				register={register('agree', { required: FIELD_IS_REQUIRED })}
