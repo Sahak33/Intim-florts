@@ -35,7 +35,7 @@ const appSlice = createSlice({
 			if (state.step === 7) {
 				state.password = null;
 			}
-
+			state.error = '';
 			state.step -= 1;
 		},
 		setGender: (state, { payload }) => {

@@ -39,3 +39,11 @@ export const progressBarCalc = step => {
 			return 100;
 	}
 };
+
+export const formatter = date => {
+	return new Date(date).toLocaleDateString('en-GB', {
+		day: '2-digit',
+		month: 'short',
+		year: 'numeric',
+	});
+};

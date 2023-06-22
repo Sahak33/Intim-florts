@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
@@ -22,6 +23,7 @@ const Complete = () => {
 	} = useForm({ mode: 'onChange' });
 	const { password, DOB, location, gender, looking_for, userId, error } = useSelector(appSelector);
 
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -44,7 +46,12 @@ const Complete = () => {
 			},
 		};
 
-		dispatch(signUp(completedData));
+		dispatch(signUp(completedData))
+			.unwrap()
+			.then(() => {
+				navigate('/home');
+			})
+			.catch(e => e);
 	};
 
 	return (

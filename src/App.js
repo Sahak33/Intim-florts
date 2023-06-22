@@ -1,22 +1,13 @@
-import { Box } from '@mui/material';
-import CardForm from 'componenets/Card';
-import Footer from 'componenets/Footer';
-import ProgressBar from 'componenets/ProgressBar';
-import Question from 'componenets/Question';
-import Register from 'componenets/Register';
-import Stepper from 'componenets/Stepper';
-import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+
+import { ROUTES } from './router';
 
 const App = () => (
-	<>
-		<Box className='home'>
-			<CardForm renderStepper={() => <Stepper />} renderProgressBar={() => <ProgressBar />}>
-				<Question />
-				<Register />
-			</CardForm>
-		</Box>
-		<Footer />
-	</>
+	<Routes>
+		{ROUTES.map(item => (
+			<Route key={item.id} {...item} />
+		))}
+	</Routes>
 );
 
 export default App;

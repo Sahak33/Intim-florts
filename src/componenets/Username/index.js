@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '@mui/material';
 import Back from 'componenets/Back';
 import Button from 'componenets/common/Button';
 import { createUsername } from 'store/app/thunks';
 import { VALIDATION_MESSAGES } from 'helpers/constants';
-import {appSelector} from "helpers/reduxSelectors";
+import { appSelector } from 'helpers/reduxSelectors';
 import './Username.scss';
 
 const { FIELD_IS_REQUIRED, USERNAME_REQUIREMENT } = VALIDATION_MESSAGES;
